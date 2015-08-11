@@ -6,6 +6,14 @@ To get started, check out the repository, inspect the code,
 
 ### Getting started
 
+Minified HTML, CSS, and JS
+resized pizzaria amd compresssed
+compressed profile picture
+made style.css internal
+added media="print" to print.css to keep from render blocking
+
+Go to  http://ntibbs.github.io/udportfolio to view the page
+
 Some useful tips to help you get started:
 
 1. Check out the repository
