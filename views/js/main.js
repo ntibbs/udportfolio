@@ -506,8 +506,9 @@ function updatePositions() {
   var items = document.getElementsByClassName('mover'); //used document.getElementsByClassName() because it is faster
   var top = document.body.scrollTop / 1250; // moved this varibale outside the loop
   var length = items.length; // defined this here to take it out of the for loop
+  var phase; // moved outside loop
   for (var i = 0; i < length; i++) {
-    var phase = Math.sin((top) + (i % 5));
+    phase = Math.sin((top) + (i % 5));
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
@@ -528,15 +529,16 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
+  var elem;//moved outside loop
   for (var i = 0; i < 40; i++) { // reduced the number of pizzas to 40 from 200
-    var elem = document.createElement('img');
+    elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
     elem.style.height = "100px";
     elem.style.width = "73.333px";
     elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
-    document.querySelector("#movingPizzas1").appendChild(elem);
+    document.getElementById("movingPizzas1").appendChild(elem);
   }
   updatePositions();
 });
